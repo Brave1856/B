@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brave Proxy</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="background" aria-hidden="true">
+    <div class="wave wave-1"></div>
+    <div class="wave wave-2"></div>
+    <div class="wave wave-3"></div>
+    <div class="wave wave-4"></div>
+  </div>
+
+  <header class="topbar">
+    <nav class="top-actions" aria-label="Main tools">
+      <button class="tool-btn" id="aiBtn" title="AI">
+        <span class="icon">✦</span><span>AI</span>
+      </button>
+      <button class="tool-btn" id="gamesBtn" title="Games">
+        <span class="icon">🎮</span><span>Games</span>
+      </button>
+      <button class="tool-btn" id="settingsBtn" title="Settings">
+        <span class="icon">⚙</span><span>Settings</span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="home">
+    <section class="hero">
+      <h1>Brave</h1>
+
+      <form class="search" id="searchForm">
+        <span class="search-icon">⌕</span>
+        <input id="urlInput" autocomplete="off"
+          placeholder="Search or enter a URL..." aria-label="Search or enter a URL" />
+        <button type="submit" class="go-btn" aria-label="Go">→</button>
+      </form>
+
+      <section class="shortcuts" aria-label="Shortcuts">
+        <div class="shortcut-title"><span>Shortcuts</span><i></i></div>
+        <div class="shortcut-row" id="shortcutRow">
+          <button class="shortcut" data-url="https://www.youtube.com/">
+            <span class="site-logo youtube">▶</span>
+            <span>YouTube</span>
+          </button>
+          <button class="shortcut" data-url="https://www.roblox.com/">
+            <span class="site-logo roblox">◇</span>
+            <span>Roblox</span>
+          </button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="panel" id="aiPanel" aria-hidden="true">
+    <div class="panel-head"><h2>Brave AI</h2><button class="close">×</button></div>
+    <div class="ai-messages" id="aiMessages">
+      <div class="message bot">Hi! I'm Brave AI. Connect your AI API in the code to turn this into a real AI chat.</div>
+    </div>
+    <form class="ai-form" id="aiForm">
+      <input id="aiInput" placeholder="Ask Brave AI..." autocomplete="off" />
+      <button>Send</button>
+    </form>
+  </aside>
+
+  <aside class="panel" id="gamesPanel" aria-hidden="true">
+    <div class="panel-head"><h2>Games</h2><button class="close">×</button></div>
+    <p class="panel-subtitle">Your games can live here.</p>
+    <div class="game-grid">
+      <button class="game-card"><span>🎮</span><strong>Bumpers</strong><small>Open game</small></button>
+      <button class="game-card"><span>👻</span><strong>Horror Survival</strong><small>Coming soon</small></button>
+      <button class="game-card"><span>➕</span><strong>Add Game</strong><small>Customize later</small></button>
+    </div>
+  </aside>
+
+  <aside class="panel" id="settingsPanel" aria-hidden="true">
+    <div class="panel-head"><h2>Settings</h2><button class="close">×</button></div>
+    <label class="setting">
+      <span>Animations</span>
+      <input type="checkbox" id="animations" checked />
+    </label>
+    <label class="setting">
+      <span>Open searches in new tab</span>
+      <input type="checkbox" id="newTab" />
+    </label>
+    <p class="panel-note">More settings can be added here later.</p>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
